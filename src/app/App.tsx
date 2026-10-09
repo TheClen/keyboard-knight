@@ -1,16 +1,16 @@
 import { useState } from 'react'
+import { CombatScreen } from '../ui/combat-screen'
 import { TitleScreen } from '../ui/title-screen'
-import { TypingTestScreen } from '../ui/typing-test-screen'
 
 // Local screen switch until the screen flow feature introduces the game reducer.
-type Screen = 'title' | 'typing-test'
+type Screen = 'title' | 'combat'
 
 export function App() {
   const [screen, setScreen] = useState<Screen>('title')
 
-  if (screen === 'typing-test') {
-    return <TypingTestScreen />
+  if (screen === 'combat') {
+    return <CombatScreen />
   }
 
-  return <TitleScreen onStart={() => setScreen('typing-test')} />
+  return <TitleScreen onStart={() => setScreen('combat')} />
 }
