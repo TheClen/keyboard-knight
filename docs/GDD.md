@@ -162,6 +162,7 @@ Chaque doigt a une couleur dédiée, utilisée dans l'écran tutoriel.
 - Dégâts de base fixes.
 - **Prompt parfait** (aucune erreur) : coup critique ×1,5.
 - **Bonus de vitesse :** petit bonus si le prompt est tapé rapidement.
+- Les bonus s'additionnent : dégâts = base × (1 + critique + combo + vitesse), arrondi à l'entier.
 
 ### 6.3 Combo
 - Chaque prompt parfait consécutif augmente un multiplicateur affiché.
@@ -175,7 +176,7 @@ Chaque doigt a une couleur dédiée, utilisée dans l'écran tutoriel.
 
 ### 6.5 PV du héros
 - Conservés sur l'ensemble du niveau (9 monstres + boss).
-- Petit soin entre chaque monstre.
+- Aucun soin : les PV perdus le restent jusqu'à la fin du niveau.
 - PV à 0 : animation `death`, puis game over.
 
 ### 6.6 Boss
@@ -195,7 +196,6 @@ Chaque doigt a une couleur dédiée, utilisée dans l'écran tutoriel.
 | PV du boss | ×3 par rapport au monstre |
 | Intervalle d'attaque des monstres | ~12 s au niveau 1, ~4 s au niveau 12 |
 | Dégâts d'un monstre | 10 |
-| Soin entre deux monstres | 10 % des PV max |
 
 Toutes ces valeurs sont stockées dans les données (`levels.json` / config), jamais en dur dans le code.
 
@@ -239,6 +239,7 @@ Aucune interaction ne nécessite la souris.
 - Barre d'attaque du monstre.
 - Compteur de progression : « Monstre 3/9 », puis « BOSS ».
 - Multiplicateur de combo.
+- Après chaque prompt : dégâts infligés, avec « Critique ! » (prompt parfait) et « Rapide ! » (bonus de vitesse) si obtenus.
 - Icône de l'arme équipée.
 - Prompt affiché au-dessus du monstre (lettres validées en vert, flash rouge en cas d'erreur).
 - **Pas de clavier visuel.**
