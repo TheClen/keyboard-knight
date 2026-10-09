@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { levels as gameLevels, promptConfig } from '../data'
-import { getLetterPools, type Level } from './levels'
+import { getLetterPools, type LevelLetters } from './levels'
+import { createSeededRandom } from './random'
 import { generatePrompt, type PromptConfig, type Random } from './prompt-generator'
 
 const config: PromptConfig = { minLength: 6, maxLength: 8, newLetterRatio: 0.5 }
 
-const levels: readonly Level[] = [
+const levels: readonly LevelLetters[] = [
   { number: 1, newLetters: ['f', 'j'] },
   { number: 2, newLetters: ['d', 'k'] },
   { number: 3, newLetters: ['s', 'l'] },
@@ -24,15 +25,8 @@ function sequence(...values: number[]): Random {
   }
 }
 
-/** Mulberry32: a small seeded generator for reproducible bulk tests. */
 function seeded(seed: number): Random {
-  let state = seed
-  return () => {
-    state = (state + 0x6d2b79f5) | 0
-    let t = Math.imul(state ^ (state >>> 15), 1 | state)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
+  return createSeededRandom(seed).random
 }
 
 describe('generatePrompt', () => {

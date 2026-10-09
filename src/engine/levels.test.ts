@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { getLetterPools, type Level } from './levels'
+import { getLetterPools, type LevelLetters } from './levels'
 
-const levels: readonly Level[] = [
+const levels: readonly LevelLetters[] = [
   { number: 1, newLetters: ['f', 'j'] },
   { number: 2, newLetters: ['d', 'k'] },
   { number: 3, newLetters: ['s', 'l'] },

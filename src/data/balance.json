@@ -3,5 +3,20 @@
     "minLength": 6,
     "maxLength": 8,
     "newLetterRatio": 0.5
+  },
+  "combat": {
+    "heroMaxHp": 100,
+    "heroBaseDamage": 10,
+    "perfectBonus": 0.5,
+    "comboStepBonus": 0.1,
+    "comboMaxBonus": 1.0,
+    "speedBonus": 0.1,
+    "speedBonusMsPerLetter": 600,
+    "monstersPerLevel": 9,
+    "monsterHp": 25,
+    "monsterDamage": 10,
+    "bossHpMultiplier": 3,
+    "bossAttackIntervalMultiplier": 1,
+    "maxTickDeltaMs": 100
   }
 }

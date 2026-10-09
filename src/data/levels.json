@@ -1,14 +1,74 @@
 [
-  { "number": 1, "newLetters": ["f", "j"] },
-  { "number": 2, "newLetters": ["d", "k"] },
-  { "number": 3, "newLetters": ["s", "l"] },
-  { "number": 4, "newLetters": ["q", "m"] },
-  { "number": 5, "newLetters": ["g", "h"] },
-  { "number": 6, "newLetters": ["e", "i"] },
-  { "number": 7, "newLetters": ["r", "u"] },
-  { "number": 8, "newLetters": ["t", "y"] },
-  { "number": 9, "newLetters": ["z", "o"] },
-  { "number": 10, "newLetters": ["a", "p"] },
-  { "number": 11, "newLetters": ["c", "v", "n"] },
-  { "number": 12, "newLetters": ["w", "x", "b"] }
+  {
+    "number": 1,
+    "newLetters": ["f", "j"],
+    "monsterAttackIntervalMs": 12000,
+    "gameOverMessage": "Le rat vous a grignoté les orteils."
+  },
+  {
+    "number": 2,
+    "newLetters": ["d", "k"],
+    "monsterAttackIntervalMs": 11300,
+    "gameOverMessage": "Le slime vous a englué jusqu'aux oreilles."
+  },
+  {
+    "number": 3,
+    "newLetters": ["s", "l"],
+    "monsterAttackIntervalMs": 10500,
+    "gameOverMessage": "Le gobelin vous a volé vos chaussettes… et votre dignité."
+  },
+  {
+    "number": 4,
+    "newLetters": ["q", "m"],
+    "monsterAttackIntervalMs": 9800,
+    "gameOverMessage": "Le champignon vous a mis K.-O. d'un nuage de spores."
+  },
+  {
+    "number": 5,
+    "newLetters": ["g", "h"],
+    "monsterAttackIntervalMs": 9100,
+    "gameOverMessage": "Le squelette vous a fait tomber sur un os."
+  },
+  {
+    "number": 6,
+    "newLetters": ["e", "i"],
+    "monsterAttackIntervalMs": 8400,
+    "gameOverMessage": "La chauve-souris vous a pris pour un moustique."
+  },
+  {
+    "number": 7,
+    "newLetters": ["r", "u"],
+    "monsterAttackIntervalMs": 7600,
+    "gameOverMessage": "L'orc vous a confondu avec son petit-déjeuner."
+  },
+  {
+    "number": 8,
+    "newLetters": ["t", "y"],
+    "monsterAttackIntervalMs": 6900,
+    "gameOverMessage": "Le golem vous a aplati comme une crêpe."
+  },
+  {
+    "number": 9,
+    "newLetters": ["z", "o"],
+    "monsterAttackIntervalMs": 6200,
+    "gameOverMessage": "Le vampire vous a trouvé tout à fait à son goût."
+  },
+  {
+    "number": 10,
+    "newLetters": ["a", "p"],
+    "monsterAttackIntervalMs": 5500,
+    "gameOverMessage": "Le chevalier noir vous a renvoyé à l'entraînement."
+  },
+  {
+    "number": 11,
+    "newLetters": ["c", "v", "n"],
+    "monsterAttackIntervalMs": 4700,
+    "gameOverMessage": "La wyverne vous a fait griller à point."
+  },
+  {
+    "number": 12,
+    "newLetters": ["w", "x", "b"],
+    "monsterAttackIntervalMs": 4000,
+    "gameOverMessage": "Le sorcier vous a transformé en grenouille."
+  }
 ]

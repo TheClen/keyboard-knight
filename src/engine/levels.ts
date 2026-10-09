@@ -1,6 +1,11 @@
-export interface Level {
+export interface LevelLetters {
   readonly number: number
   readonly newLetters: readonly string[]
+}
+
+export interface Level extends LevelLetters {
+  readonly monsterAttackIntervalMs: number
+  readonly gameOverMessage: string
 }
 
 export interface LetterPools {
@@ -9,7 +14,7 @@ export interface LetterPools {
 }
 
 export function getLetterPools(
-  levels: readonly Level[],
+  levels: readonly LevelLetters[],
   levelNumber: number,
 ): LetterPools {
   const level = levels.find((candidate) => candidate.number === levelNumber)

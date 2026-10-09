@@ -1,3 +1,4 @@
+import type { CombatConfig } from '../engine/combat-rules'
 import type { KeyboardLayout } from '../engine/keyboard'
 import type { Level } from '../engine/levels'
 import type { PromptConfig } from '../engine/prompt-generator'
@@ -9,3 +10,4 @@ import levelsJson from './levels.json'
 export const levels: readonly Level[] = levelsJson
 export const keyboardAzerty = keyboardAzertyJson as KeyboardLayout
 export const promptConfig: PromptConfig = balanceJson.prompt
+export const combatConfig: CombatConfig = balanceJson.combat

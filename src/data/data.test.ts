@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { keyboardAzerty, levels, promptConfig } from '.'
+import { combatConfig, keyboardAzerty, levels, promptConfig } from '.'
 
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
@@ -25,6 +25,20 @@ describe('levels', () => {
     expect(levels.map((level) => level.number)).toEqual([
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
     ])
+  })
+
+  it('speeds up monster attacks from 12 s on level 1 to 4 s on level 12', () => {
+    const intervals = levels.map((level) => level.monsterAttackIntervalMs)
+
+    expect(intervals[0]).toBe(12000)
+    expect(intervals.at(-1)).toBe(4000)
+    intervals.slice(1).forEach((interval, index) => {
+      expect(interval).toBeLessThan(intervals[index] ?? Infinity)
+    })
+  })
+
+  it('has a game over message for every level', () => {
+    levels.forEach((level) => expect(level.gameOverMessage.trim()).not.toBe(''))
   })
 
   it('introduces each of the 26 letters exactly once', () => {
@@ -70,5 +84,36 @@ describe('promptConfig', () => {
   it('defines a ratio between 0 and 1', () => {
     expect(promptConfig.newLetterRatio).toBeGreaterThanOrEqual(0)
     expect(promptConfig.newLetterRatio).toBeLessThanOrEqual(1)
+  })
+})
+
+describe('combatConfig', () => {
+  it('defines positive whole numbers for hit points, damage and counts', () => {
+    const wholeValues = [
+      combatConfig.heroMaxHp,
+      combatConfig.heroBaseDamage,
+      combatConfig.monstersPerLevel,
+      combatConfig.monsterHp,
+      combatConfig.monsterDamage,
+    ]
+
+    wholeValues.forEach((value) => {
+      expect(Number.isInteger(value)).toBe(true)
+      expect(value).toBeGreaterThan(0)
+    })
+  })
+
+  it('defines non-negative bonuses with a combo cap above its step', () => {
+    expect(combatConfig.perfectBonus).toBeGreaterThanOrEqual(0)
+    expect(combatConfig.speedBonus).toBeGreaterThanOrEqual(0)
+    expect(combatConfig.comboStepBonus).toBeGreaterThan(0)
+    expect(combatConfig.comboMaxBonus).toBeGreaterThanOrEqual(combatConfig.comboStepBonus)
+  })
+
+  it('defines positive timings and multipliers', () => {
+    expect(combatConfig.speedBonusMsPerLetter).toBeGreaterThan(0)
+    expect(combatConfig.maxTickDeltaMs).toBeGreaterThan(0)
+    expect(combatConfig.bossHpMultiplier).toBeGreaterThan(0)
+    expect(combatConfig.bossAttackIntervalMultiplier).toBeGreaterThan(0)
   })
 })
