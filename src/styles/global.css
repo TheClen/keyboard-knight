@@ -60,6 +60,52 @@ h1 {
   color: #c3c7d1;
 }
 
+.typing-test-screen {
+  padding: 2rem;
+  text-align: center;
+}
+
+.prompt {
+  display: flex;
+  gap: 0.15em;
+  justify-content: center;
+  margin: 2rem 0;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-weight: 700;
+}
+
+.prompt--error {
+  animation: prompt-error-flash 250ms steps(2) 1;
+}
+
+.prompt-letter {
+  min-width: 1ch;
+  border-bottom: 0.1em solid transparent;
+  color: #c3c7d1;
+}
+
+.prompt-letter--done {
+  color: #7bd88f;
+}
+
+.prompt-letter--current {
+  border-bottom-color: #d9ad62;
+  color: #f5f1df;
+}
+
+@keyframes prompt-error-flash {
+  from {
+    color: #ff5c5c;
+    transform: translateX(-0.1em);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prompt--error {
+    animation: none;
+  }
+}
+
 @media (max-width: 480px) {
   .game-frame {
     min-height: 240px;
