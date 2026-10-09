@@ -1,0 +1,7 @@
+{
+  "prompt": {
+    "minLength": 6,
+    "maxLength": 8,
+    "newLetterRatio": 0.5
+  }
+}
