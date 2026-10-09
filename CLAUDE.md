@@ -5,6 +5,7 @@ Projet portfolio : la qualité du code ET du workflow IA sont mises en avant.
 
 ## Documents de référence
 - Game Design Document : @docs/GDD.md — source de vérité pour le gameplay.
+- Tableau des niveaux (lettres, monstres, boss, armes, décors) : docs/levels.md
 - Décisions d'architecture : docs/adr/
 - Spécifications des features : docs/specs/
 

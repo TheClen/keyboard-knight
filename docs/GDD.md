@@ -271,12 +271,12 @@ Aucune interaction ne nécessite la souris.
 - Un **seul sprite de héros** pour toutes les armes.
 - L'arme est visible **dans le coffre** et **dans le HUD**.
 - Pas d'effet d'attaque spécifique par arme.
-- Liste des armes : à définir (registre humoristique, progression du plus ridicule au plus légendaire).
+- Liste des armes : voir [docs/levels.md](levels.md) (registre humoristique, progression du plus ridicule au plus légendaire).
 
 ### 10.5 Monstres
 - Un type de monstre par niveau, avec une difficulté visuelle croissante
   (ex. : rat, gobelin, squelette… jusqu'au sorcier).
-- Liste définitive : à définir.
+- Liste des monstres, boss et messages de game over : voir [docs/levels.md](levels.md).
 
 ---
 
@@ -322,8 +322,8 @@ Aucune interaction ne nécessite la souris.
 
 À trancher pendant la phase de spécification ou de production :
 - [ ] Taille des sprites (32×32 ou 48×48), à tester avec PixelLab sur une scène de 320×180.
-- [ ] Liste des 12 monstres.
-- [ ] Liste des 12 armes.
+- [x] Liste des 12 monstres.
+- [x] Liste des 12 armes.
 - [ ] Palette de couleurs des doigts.
 - [ ] Touches de navigation sur l'écran de bilan.
 - [ ] Méthode de détection de la disposition AZERTY.
