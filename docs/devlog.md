@@ -37,3 +37,18 @@ où j'ai dû reprendre la main. Matière première pour l'étude de cas du portf
 - Collaboration : aucune réponse fournie.
 - Corrections ou reprises : aucune réponse fournie.
 - Retours pour la suite du workflow : aucune réponse fournie.
+
+## 2026-10-09 — Combat
+- Interview de feature (9 questions), puis spec [combat](./specs/combat.md).
+- Décisions : reducer pur avec sous-phases et actions `tick` / `key-pressed` / `prompt-shown` / `animation-finished` ; barre d'attaque en pause hors frappe ; bonus additifs `base × (1 + critique + combo + vitesse)` ; combo conservé sur le niveau ; seuil de vitesse 600 ms par lettre ; monstre 25 PV, boss ×3 ; intervalle d'attaque par niveau (12 s → 4 s).
+- Changement du GDD : plus aucun soin entre les monstres (§6.5, §6.7).
+- Choix proposés par Claude et validés : aléatoire à graine dans l'état, écart de temps plafonné à 100 ms, animations quasi instantanées en `prefers-reduced-motion`.
+- Moteur : `random.ts`, `combat-rules.ts`, `combat.ts` ; données de combat dans `balance.json` et `levels.json` (dont les messages de game over).
+- UI : écran de combat placeholder du niveau 1 (rectangles, HUD, animations CSS), qui remplace l'écran d'entraînement.
+- Retouches demandées après test : emplacement fixe pour le prompt (saut vertical), arène en deux colonnes de 50 % (saut horizontal), affichage « Critique ! » / « Rapide ! » sous les dégâts.
+- Incident : une suppression de fichier déjà indexée est partie dans le commit de doc, laissant 3 commits sans compilation ; commits refaits avant tout push et vérifiés un par un.
+- 79 tests Vitest. Critère `prefers-reduced-motion` non vérifié manuellement. Aucune dépendance ajoutée.
+- Commits : `a630f19`, `e765007`, `86a9e32`, `b5c4a6e`.
+- Collaboration : aucune réponse fournie.
+- Corrections ou reprises : aucune réponse fournie.
+- Retours pour la suite du workflow : aucune réponse fournie.
